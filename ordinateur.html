@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A-Frame Scene 2</title>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene fog="type: exponential; color: #16304a; density: 0.10">
+      <a-assets>
+        <a-asset-item id="computer-model" src="assets/computer.glb"></a-asset-item>
+        <a-asset-item id="desk-model" src="assets/desk.glb"></a-asset-item>
+      </a-assets>
+
+      <a-sky color="#16304a"></a-sky>
+
+      <a-entity light="type: ambient; color: #16304a; intensity: 0.7"></a-entity>
+
+      <a-entity light="type: directional; color: #1ee6b7; intensity: 0.3" position="0 10 -5"></a-entity>
+
+      <a-entity light="type: point; color: #3fffd6; intensity: 2; distance: 30" position="0 8 -20"></a-entity>
+
+      <a-plane position="0 8 -10" width="10" height="6" color="#3fffd6" material="emissive: #3fffd6; emissiveIntensity: 1"></a-plane>
+
+      <a-entity camera position="0 6 -2" rotation="-40 0 0"></a-entity>
+
+      <a-entity gltf-model="#computer-model" position="0 2 -4.6" scale="3 3 3" rotation="10 180 -3"></a-entity>
+      <a-entity gltf-model="#desk-model" position="0 0.7 -5" scale="2 2 2" rotation="0 180 0"></a-entity>
+    </a-scene>
+  </body>
+</html>

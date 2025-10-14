@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A-Frame Scene 2</title>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+<a-scene fog="type: exponential; color: #1a3a5c; density: 0.04">
+  <a-assets>
+    <a-asset-item id="phare-model" src="assets/phare.glb"></a-asset-item>
+  </a-assets>
+
+  <a-sky color="#1a3a5c"></a-sky>
+
+  <a-entity light="type: ambient; color: #88aaff; intensity: 0.7"></a-entity>
+  <a-entity light="type: directional; color: #3366ff; intensity: 0.5" position="5 10 7"></a-entity>
+
+  <a-entity gltf-model="#phare-model" position="0 0 -20" scale="1 1 1"></a-entity>
+</a-scene>
+  </body>
+</html>

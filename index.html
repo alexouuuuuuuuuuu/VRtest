@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr"></html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,43 +9,64 @@
   </head>
   <body>
     <a-scene>
-      <html>
-        <head>
-          <title>Ma première scène A-Frame</title>
-          <meta charset="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
-        </head>
-        <body>
-          <a-scene>
-            <a-box
-              position="-1 0.5 -3"
-              rotation="0 45 0"
-              color="#4CC3D9"
-            ></a-box>
-            <a-sphere
-              position="0 1.25 -5"
-              radius="1.25"
-              color="#EF2D5E"
-            ></a-sphere>
-            <a-cylinder
-              position="1 0.75 -3"
-              radius="0.5"
-              height="1.5"
-              color="#FFC65D"
-            ></a-cylinder>
-            <a-plane
-              position="0 0 -4"
-              rotation="-90 0 0"
-              width="4"
-              height="4"
-              color="#7BC8A4"
-            ></a-plane>
-            <a-sky color="#ECECEC"></a-sky>
-            <a-camera> </a-camera>
-          </a-scene>
-        </body>
-      </html>
+      <a-assets>
+        <a-asset-item id="voiture-model" src="assets/voiture.glb"></a-asset-item>
+        <a-asset-item id="perroquet-model" src="assets/perroquet.glb"></a-asset-item>
+      </a-assets>
+
+      <!-- Utilisation des modèles GLB dans la scène -->
+      <a-entity gltf-model="#voiture-model" position="3 0 -5" scale="1 1 1"></a-entity>
+      <a-entity gltf-model="#perroquet-model" position="6 3.2 -6.7" scale="0.1 0.1 0.1" rotation="0 -70 0"></a-entity>
+      
+
+      <!-- Sol avec herbe -->
+      <a-plane position="0 0 -5" rotation="-90 0 0" width="30" height="30" color="#7BC8A4"></a-plane>
+      <!-- Ciel bleu -->
+      <a-sky color="#87CEEB"></a-sky>
+      
+      <!-- Soleil -->
+      <a-sphere position="10 15 -20" radius="2" color="#FFD700" emissive="#FFD700"></a-sphere>
+      
+      <!-- Montagnes -->
+      <a-cone position="-10 2 -20" radius-bottom="6" radius-top="0.5" height="8" color="#A9A9A9"></a-cone>
+      <a-cone position="0 3 -25" radius-bottom="8" radius-top="0.5" height="12" color="#B0C4DE"></a-cone>
+      <a-cone position="12 2 -18" radius-bottom="5" radius-top="0.5" height="7" color="#A9A9A9"></a-cone>
+      
+      <!-- Arbres -->
+      <a-cylinder position="-5 1 -8" radius="0.3" height="2" color="#8B5A2B"></a-cylinder>
+      <a-sphere position="-5 2.5 -8" radius="1" color="#228B22"></a-sphere>
+      <a-cylinder position="6 1 -7" radius="0.3" height="2" color="#8B5A2B"></a-cylinder>
+      <a-sphere position="6 2.5 -7" radius="1" color="#228B22"></a-sphere>
+      <a-cylinder position="2 1 -10" radius="0.3" height="2" color="#8B5A2B"></a-cylinder>
+      <a-sphere position="2 2.5 -10" radius="1" color="#228B22"></a-sphere>
+      
+      <!-- Maison -->
+      <a-box position="0 1 -5" depth="2" height="2" width="2" color="#F4A460"></a-box>
+      <a-cone position="0 2.7 -5" radius-bottom="1.4" radius-top="0" height="1" color="#B22222"></a-cone>
+      <a-box position="0.7 0.5 -3.9" depth="0.2" height="1" width="0.8" color="#FFF"></a-box>
+      <a-box position="-0.7 0.5 -3.9" depth="0.2" height="1" width="0.8" color="#FFF"></a-box>
+      <a-box position="0 0.5 -6.1" depth="0.2" height="1" width="0.8" color="#8B4513"></a-box>
+      
+      <!-- Lac -->
+      <a-circle position="8 0.01 -12" rotation="-90 0 0" radius="3" color="#1E90FF" opacity="0.7"></a-circle>
+      
+      <!-- Nuages -->
+      <a-sphere position="3 8 -10" radius="1.2" color="#FFF" opacity="0.8"></a-sphere>
+      <a-sphere position="4.2 8.3 -10" radius="0.8" color="#FFF" opacity="0.8"></a-sphere>
+      <a-sphere position="2.2 8.3 -10" radius="0.8" color="#FFF" opacity="0.8"></a-sphere>
+      <a-sphere position="-6 7.5 -15" radius="1.5" color="#FFF" opacity="0.8"></a-sphere>
+      <a-sphere position="-7.5 7.7 -15" radius="1" color="#FFF" opacity="0.8"></a-sphere>
+      
+      <!-- Chemin -->
+      <a-plane position="0 0.01 -5" rotation="-90 0 0" width="1" height="8" color="#D2B48C"></a-plane>
+      
+      <!-- Personnage stylisé -->
+      <a-sphere position="0 1.25 -2" radius="0.3" color="#FFD39B"></a-sphere>
+      <a-cylinder position="0 0.7 -2" radius="0.18" height="0.8" color="#4682B4"></a-cylinder>
+      <a-cylinder position="-0.18 0.4 -2" radius="0.07" height="0.5" rotation="0 0 20" color="#FFD39B"></a-cylinder>
+      <a-cylinder position="0.18 0.4 -2" radius="0.07" height="0.5" rotation="0 0 -20" color="#FFD39B"></a-cylinder>
+      <a-cylinder position="-0.08 0.1 -2" radius="0.08" height="0.4" rotation="0 0 10" color="#FFD39B"></a-cylinder>
+      <a-cylinder position="0.08 0.1 -2" radius="0.08" height="0.4" rotation="0 0 -10" color="#FFD39B"></a-cylinder>
     </a-scene>
   </body>
 </html>

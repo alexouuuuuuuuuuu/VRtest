@@ -11,6 +11,7 @@
       <a-assets>
         <a-asset-item id="computer-model" src="assets/computer.glb"></a-asset-item>
         <a-asset-item id="desk-model" src="assets/desk.glb"></a-asset-item>
+        <a-asset-item id="chair-model" src="assets/chair.glb"></a-asset-item>
       </a-assets>
 
       <a-sky color="#16304a"></a-sky>
@@ -23,10 +24,11 @@
 
       <a-plane position="0 8 -10" width="10" height="6" color="#3fffd6" material="emissive: #3fffd6; emissiveIntensity: 1"></a-plane>
 
-      <a-entity camera position="0 6 -2" rotation="-40 0 0"></a-entity>
-
       <a-entity gltf-model="#computer-model" position="0 2 -4.6" scale="3 3 3" rotation="10 180 -3"></a-entity>
       <a-entity gltf-model="#desk-model" position="0 0.7 -5" scale="2 2 2" rotation="0 180 0"></a-entity>
+      <a-entity gltf-model="#chair-model" position="0 0.7 -3" scale="2 2 2"></a-entity>
+
+      <a-camera position="0 6 -2" rotation="-40 0 0"></a-camera>
     </a-scene>
   </body>
 </html>
